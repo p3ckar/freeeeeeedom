@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+
+<!-- Mirrored from evirtualpay.com/pg/vpcheckout/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Mar 2022 09:50:04 GMT -->
+<!-- Added by HTTrack --><meta http-equiv="content-type" content="text/html;charset=UTF-8" /><!-- /Added by HTTrack -->
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Virtual Pay Encrypted Checkout</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/main.css">
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/mobile.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+          integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+          <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="styles/main.css"> -->
+    
+	  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+	
+      <script type="text/javascript" src="js/config.js"></script>
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/songbird_v1.js"></script>
+    <script type="text/javascript" src="js/embeded_up.js"></script>
+    <script type="text/javascript" src="js/enc_checkout.js"></script>
+    <script type="text/javascript" src="js/crypto-js/crypto-js.js"></script>
+    <script type="text/javascript" src="js/jsencrypt/bin/jsencrypt.min.js"></script>
+    <!-- <script type="text/javascript" src="js/embeded.js"></script> -->
+	<script type="text/javascript" src="js/loadingView.js"></script>
+    <script type="text/javascript" src="js/network_select.js"></script>
+	<script type="text/javascript" src="https://h.online-metrix.net/fp/tags8447.js?org_id=k8vif92e&amp;session_id=ecomr00351265768798297867526"></script>
+	
+    
+</head>
+<body >
+    <div class="container">
+
+
+        <div class="row ">
+            <div class="card-group">
+
+                <div class="col-sm-6 col-md-12" id="main-navigation">
+                    <div class="card">
+                        <div class="card-body">
+
+
+                            <div >
+                                <div class="row"><div class="col-8"><img class="imgLogo" src="img/vp-pic.jpg" alt="Virtual Pay"></div>
+                                    <div class="col-4" ><p > </p></div>
+                                </div>
+                                <p ></p>
+                            </div>
+							<hr>
+
+
+
+
+                            <h5  class="card-title card_t">Select a payment method</h5>
+                            <ul>
+
+                               
+                                <li><span class="fa-stack fa-lg icon_style_left" style=" cursor: pointer;" id="card-navigation" >
+                                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                        <i class="fa fa-credit-card fa-stack-1x inner-icon-bg"></i>
+                                      </span><span id="card-navigation-icon" style=" cursor: pointer;">Pay with Card<i
+                                                class="fa fa-angle-right angle_icon_style_right" 
+                                                ></i></span></li>
+
+                                <hr>
+                                <li> <span class="fa-stack fa-lg icon_style_left" style=" cursor: pointer;" id="mobile-navigation">
+                                        <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                        <i class="fa fa-mobile fa-stack-1x inner-icon-bg"></i>
+                                      </span> <span id="mobile-navigation-icon" style=" cursor: pointer;" >Pay with Mobile<i class="fa
+                                                fa-angle-right icon_style_right" 
+                                                ></i></span></li>
+
+                                <hr>
+                                <li class="disabled_icons"> <span class="fa-stack fa-lg icon_style_left text-color">
+                                    <i class="fa fa-circle fa-stack-2x icon-background" ></i>
+                                    <i class="fa fa-bank fa-stack-1x text-color" ></i>
+                                  </span>Pay with Bank<span><i class="fa
+                                            fa-angle-right angle_icon_style_right text-color"
+                                            ></i></span></li>
+
+                                <li class="disabled_icons"> <span class="fa-stack fa-lg icon_style_left">
+                                    <i class="fa fa-circle fa-stack-2x icon-background"></i>
+                                    <i class="fa fa-google-wallet fa-stack-1x text-color"></i>
+                                  </span>Pay with Wallets<span><i class="fa
+                                            fa-angle-right icon_style_right text-color"
+                                            ></i></span></li>
+
+                            </ul>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="col-sm-6 col-md-12 " id="card-pay" style="display:none;" >
+                    <div class="card" >
+                        <div class="card-body">
+                            <div >
+                                 <div class="row"><div class="col-8"><img class="imgLogo" src="img/vp-pic.jpg" alt="Virtual Pay"></div>
+                                    <div class="col-4" ><p >  </p></div>
+                                </div>
+                                <p ></p>
+                            </div>
+							<hr>
+                            <li style ="list-style-type: none;"><span id="main-card-navigation-icon" style=" cursor: pointer;"> <i class="fa fa-angle-left angle-left-icon " 
+                                                ></i>Change payment method</span></li>
+
+                                                <div class="modal fade"    id="resModal" name="resModal" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog  modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+
+                                    
+                                            <div class="modal-body">
+                                            <iframe name="paFrame" id="paFrame" height="480px" width="500px" style="border:none"> </iframe>
+                                            </div>
+                                            
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- <h6 class="card-title"><span>< </span> Change payment method</h6> -->
+
+
+                            <form  id="payment_form" name="payment_form" >
+                                <div class="cardpay-body">
+                              <!-- Hidden Inputs -->
+							  
+                                <input type="hidden"  id="mobile" name="mobile" value="">
+                                <input type="hidden"  id="first_name" name="first_name" value="">
+                                <input type="hidden"  id="last_name" name="last_name" value="">
+                                
+                                 <input type="hidden" id="amount" name="amount" value="">
+                                 <input type="hidden"  id="currency" name="currency" value="">
+                                 <input type="hidden"  id="customer_id" name="customer_id" value="">
+                                 <input type="hidden"  id="api_key" name="api_key" value="">
+                                 <input type="hidden" id="private_key" name="private_key" value="">
+                                 <input type="hidden"  id="country" name="country" value="">
+								
+                                 <input type="hidden" id="merchant_id" name="merchant_id" value="">
+                                 <input type="hidden"  id="city" name="city" value="">
+                                 <input type="hidden" id="narration" name="narration" value="">
+                                 <input type="hidden" id="email" name="email" value="">
+                                 <input type="hidden" id="requestID" name="requestID" value="">
+                                 <input type="hidden" id="redirectUrl" name="redirectUrl" value="">
+                                 <input type="hidden" id= "timeoutUrl"name="timeoutUrl" value="">
+                                 
+
+
+
+                                <div class="form-check form-check-inline contained">
+                                    <input class="form-check-input" type="radio" name="newCard" id="newCard" value="newCard" checked>
+                                    <label  class="form-check-label" for="newCard">New Card</label>
+                                </div>
+                                <div class="form-check form-check-inline contained">
+                                    <input class="form-check-input" type="radio" name="savedCard" id="savedCard" value="savedCard" disabled>
+                                    <label  class="form-check-label" for="savedCard">Saved Card</label>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-12">
+                                    <span class="error_form" id="card_error_message" style="display:none;color:red;font-size: 12px;">Please enter a valid cardnumber which is 16 digits</span>
+                                        <label  for="pan">Card Number <span style='color:red'>*</span></label>
+                                        <div class="input-icons">
+                                            <i class="fa fa-lg fa-credit-card icon"></i>
+                                            <input type="text"  style="font-family: 'Montserrat';
+                                    font-size: 12px;"   class="form-control h-50 input-field" id="pan" name="pan" required  maxlength="16" pattern="[0-9]{16}" title=" Enter a valid card number which is 16 digits">
+                                        </div>
+
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-6">
+                                    <span class="error_form" id="cvv_error_message" style="display:none;color:red;font-size: 12px;">Please enter a valid cvv!</span>
+                                        <label  for="cvv">CVV <span style='color:red'>*</span></label>
+
+
+                                        <input type="text"  style="font-family: 'Montserrat';
+                                    font-size: 12px;"  class="form-control" id="cvv" name="cvv" required  maxlength="3" pattern="[0-9]{3}" title=" Enter Valid cvv e.g 123" placeholder="123">
+
+                                    </div>
+
+
+                                    <div class="form-group col-md-6">
+                                    <span class="error_form" id="expiry_error_message" style="display:none;color:red;font-size: 12px;">Please enter a valid expiry</span>
+                                        <label  for="expiry_date">Expiry <span style='color:red'>*</span></label>
+                                        <div class="input-icons">
+                                            <i class="fa fa-lg fa-calendar icon"></i>
+                                            <input type="text"  style="font-family: 'Montserrat';
+                                    font-size: 12px;"  class="form-control h-50  input-field" id="expiry_date" name="expiry_date" required placeholder="MM/YY" pattern="[0-9]{5}" maxlengt="5" title="Enter a valid expiry date in this format:MMYYYY">
+                                        </div>
+                                    </div>
+                                </div>
+								 <div class="form-row">
+
+                                    <div class="form-group col-md-6" id ="state_div" style="display:none;">
+                                        <label  for="stateCode">State/Province  <span style='color:red'>*</span></label>
+
+
+                                     <select class="form-control h-50" id="state"  style="font-family: 'Montserrat';
+                                    font-size: 12px;"  name="state" >
+                                    <option value="">State/Province</option>
+                                    <option value="NL">Newfoundland and Labrador</option>
+                                    <option value="PE">Prince Edward Island</option>
+                                    <option value="NS">Nova Scotia</option>
+                                    <option value="NB">New Brunswick</option>
+                                    <option value="QC">Quebec</option>
+                                    <option value="ON">Ontario</option>
+                                    <option value="MB">Manitoba</option>
+                                    <option value="SK">Saskatchewan</option>
+                                    <option value="AB">Alberta</option>
+                                    <option value="BC">British Columbia</option>
+                                    <option value="YT">Yukon</option>
+                                    <option value="NT">Northwest Territories</option>
+                                    <option value="AL">Alabama</option>
+                                    <option value="AK">Alaska</option>
+                                    <option value="AZ">Arizona</option>
+                                    <option value="AR">Arkansas</option>
+                                    <option value="CA">California</option>
+                                    <option value="CO">Colorado</option>
+                                    <option value="CT">Connecticut</option>
+                                    <option value="DE">Delaware</option>
+                                    <option value="DC">District of Columbia</option>
+                                    <option value="FL">Florida</option>
+                                    <option value="GA">Georgia</option>
+                                    <option value="ID">Idaho</option>
+                                    <option value="IL">Illinois</option>
+                                    <option value="IN">Indiana</option>
+                                    <option value="IA">Iowa</option>
+                                    <option value="KS">Kansas</option>
+                                    <option value="KY">Kentucky</option>
+                                    <option value="LA">Louisiana</option>
+                                    <option value="ME">Maine</option>
+                                    <option value="MD">Maryland</option>
+                                    <option value="MA">Massachusetts</option>
+                                    <option value="MI">Michigan</option>
+                                    <option value="MN">Minnesota</option>
+                                    <option value="MS">Mississippi</option>
+                                    <option value="MO">Missouri</option>
+                                    <option value="MT">Montana</option>
+                                    <option value="NE">Nebraska</option>
+                                    <option value="NV">Nevada</option>
+                                    <option value="NH">New Hampshire</option>
+                                    <option value="NJ">New Jersey</option>
+                                    <option value="NM">New Mexico</option>
+                                    <option value="NY">New York</option>
+                                    <option value="NC">North Carolina</option>
+                                    <option value="ND">North Dakota</option>
+                                    <option value="OH">Ohio</option>
+                                    <option value="OK">Oklahoma</option>
+                                    <option value="OR">Oregon</option>
+                                    <option value="PA">Pennsylvania</option>
+                                    <option value="RI">Rhode Island</option>
+                                    <option value="SC">South Carolina</option>
+                                    <option value="SD">South Dakota</option>
+                                    <option value="TN">Tennessee</option>
+                                    <option value="TX">Texas</option>
+                                    <option value="UT">Utah</option>
+                                    <option value="VT">Vermont</option>
+                                    <option value="VA">Virginia</option>
+                                    <option value="WA">Washington</option>
+                                    <option value="WV">West Virginia</option>
+                                    <option value="WI">Wisconsin</option>
+                                    <option value="WY">Wyoming</option>
+                                    <option value="AS">American Samoa</option>
+                                    <option value="GU">Guama</option>
+                                    <option value="MH">Marshall Islands</option>
+                                    <option value="FM">Micronesia</option>
+                                    <option value="MP">Northern Marianas</option>
+                                    <option value="PW">Palau</option>
+                                    <option value="PR">Puerto Rico</option>
+                                    <option value="VI">Virgin Islands</option>
+								</select>
+
+                                    </div>
+
+
+                                    <div class="form-group col-md-6" id ="postal_div" style="font-family: 'Montserrat';
+                                    font-size: 12px; display:none;">
+
+                                        <label for="zip">Postal Code  <span style='color:red'>*</span></label>
+                                       
+                                          
+                                <input id="zip" placeholder="Postal Code" name="zip" type="text" maxlength="7" minlength="5"
+                                       value= "" class="form-control h-50">
+                                       
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="gridCheck" disabled>
+                                        <label class="form-check-label"  for="gridCheck">
+                                            Save Card
+                                    </label>
+                                    </div>
+                                </div>
+
+
+                                
+
+
+
+                                </div>
+                            </form>
+                            <button type="submit" 
+                                id="pay_button" onclick="pay()" class="btn btn-warning payButton mobileBtn">Pay <span>  </span></button>
+                            
+                            <button type="submit" id="" onclick="" class="btn btn-warning payButton mobileBtn"> <a style="padding-top: 10px; color:inherit; text-decoration:inherit" href="#">Back to website</a> 
+                                </button>
+                            
+                            <div class="icons" style="margin-left:auto;margin-right:auto">
+
+                                <div class="col " thumbnail><img class="card-row-img" src="img/card-row.jpg" alt="Union Pay"></div>
+                                
+                            </div>
+                            <!-- <div class="row" style="margin-bottom: 10px;">
+                                <div  class="col-4" style="margin-right: 0px" thumbnail><img class="pci-img" src="img/pci_dss.png" alt="PCI/DSS Certified"></div>
+                                <div class="col-8" style="margin-right: 0px;padding:5px;margin-left:5px;float:right">
+                                    <p style="font-family: 'Montserrat';
+                                    font-size: 12px; padding:12px;margin-left:0px"> Powered By <span style="font-size:20px;color:#f29e24;font-weight:bold">Virtual Pay</span></p>
+                                </div>
+                            </div> -->
+                            <div class="card_footer" style="">
+                        <div class="col-2 pci_footer" style="" thumbnail><img class="" src="img/pci_dss.png" alt="PCI/DSS Certified" height="40" width="70"></div>
+                        <div class="col-10" style="float:left">
+                            <p class="powered_footer"style="
+                               "> Powered By <span style="font-size:20px;color:#f29e24;font-weight:bold">Virtual Pay</span></p>
+                        </div>
+                    </div>
+
+                        </div>
+                    </div>
+                </div>
+				 <div class="col-sm-6 col-md-12 " id="mobile-pay" style="display:none;">
+                    <div class="card" >
+                        <div class="card-body">
+
+                            <div >
+                                <div class="row"><div class="col-8"><img class="imgLogo" src="img/vp-pic.jpg" alt="Virtual Pay"></div>
+                                    <div class="col-4" ><p >  </p></div>
+                                </div>
+                                <p></p>
+                            </div>
+
+                            <!-- <h5 class="card-title"><span>< </span> Change payment method</h5> -->
+                            <hr>
+                            <li style ="list-style-type: none;"><span  id="main-mobile-navigation-icon" style=" cursor: pointer;"> <i class="fa fa-angle-left angle-left-icon" 
+                                                ></i>Change payment method</span></li>
+                                                <div class="modal fade"    id="mobile_resModal" name="mobile_resModal" tabindex="-1" role="dialog" aria-labelledby="modalCenterTitle" aria-hidden="true">
+                                <div class="modal-dialog  modal-dialog-centered" role="document">
+                                    <div class="modal-content">
+
+                                                                        
+                                        <div class="modal-body">
+                                        <iframe name="paFramey" id="paFramey" height="200px" width="200px" style="border:none"> </iframe>
+                                        </div>
+     
+                                    </div>
+                                </div>
+                            </div>
+							 
+
+                            <form  id="mobile_payment_form" name="mobile_payment_form" target="">
+                                <!-- <div class="mobilepay-body"> -->
+                              <!-- Hidden Inputs -->
+							  
+                                <input type="hidden"  id="first_name" name="first_name" value="">
+                                <input type="hidden"  id="last_name" name="last_name" value="">
+                                
+                                 <input type="hidden" id="amount" name="amount" value="">
+                                 <input type="hidden"  id="currency" name="currency" value="">
+                                 <input type="hidden"  id="customer_id" name="customer_id" value="">
+                                 <input type="hidden"  id="api_key" name="api_key" value="">
+                                 <input type="hidden" id="private_key" name="private_key" value="">
+                                 
+								
+                                 <input type="hidden" id="merchant_id" name="merchant_id" value="">
+                                 <input type="hidden"  id="city" name="city" value="">
+                                 <input type="hidden" id="narration" name="narration" value="">
+                                 <input type="hidden" id="email" name="email" value="">
+                                 <input type="hidden" id="requestID" name="requestID" value="">
+                                 <input type="hidden" id="redirectUrl" name="redirectUrl" value="">
+                             
+                             
+                                
+                                 
+
+
+
+                                <div class="form-row">
+
+                                    <div class="form-group col-md-4">
+                                        <label   for="country">Country</label>
+                                       <input style="
+                                    font-size: 12px;" type="text" class="form-control " id="country_wallet" value="" name="country_wallet"  disabled>
+                                    </div>
+									
+                                    
+                                    <div class="form-group col-md-8">
+                                    <span class="error_form" id="mobile_error_message" style="display:none;color:red;font-size: 12px;">Please enter a valid Number!</span>
+                                        <label for="mobile_wallet" >Mobile Number <span style="color:red;">*</span></label>
+                                        <input type="text" class="form-control "  style="
+                                    font-size: 12px;" id="mobile_wallet" value=""data-toggle="tooltip" data-placement="top" name="mobile_wallet" placeholder="700000000" minlength="9" maxlength="9" title="Valid phone number e.g 700000000" required>
+                                    
+                                </div>
+                               
+
+                                </div>
+                                <div class="form-row">
+
+
+                                    <div class="form-group col-md-12">
+                                    <span class="error_form" id="mno_error_message" style="display:none;color:red;font-size: 12px;">Please select a  Mobile Network Operator in the list!</span>
+                                        <label for="mno_wallet" >Network <span style="color:red;">*</span></label>
+                                        <select id="mno_wallet" name="mno_wallet"  class="form-control " style="font-size:12px" >
+                                            
+                                           
+                                            
+                                          </select>
+                                    </div>
+                                </div>
+                                
+                             <!-- </div> -->
+                                </form>
+                                <button type="submit" 
+                                    id="pay_button_wallet" onclick="payWallet()" class="btn btn-warning  payButton mobileBtn">Pay <span>  </span></button>
+                           
+                                <button type="submit" id="" onclick="" class="btn btn-warning payButton mobileBtn"> <a style="padding-top: 10px; color:inherit; text-decoration:inherit" href="#">Back to website</a> 
+                                </button>
+                            <div class="icons">
+                               
+                                <!-- <div class="col " thumbnail><img class="mobile-row-img" src="img/Mobilelogos.PNG" alt="Lipa na mpesa"></div> -->
+                                
+                                    <div class="" thumbnail><img class="" src="img/airtel1.png" width="50" height="30" alt="Airtel"></div>
+                                    <div class="" thumbnail><img class="" src="img/mpesalogo.png" width="50" height="30"alt="Mpesa"></div>
+                                    <div class="" thumbnail><img class="" src="img/eazzypaylogo.jpg" width="50" height="30" alt="EazzyPay"></div>
+                                    <div class="" thumbnail><img class="" src="img/mtnlogo.png" width="50" height="30" alt="Mtn"></div>
+                                    <div class="" thumbnail><img class="" src="img/tigo-logo.png" width="50" height="30" alt="Tigo"></div>
+                                    
+       
+                                
+                                
+                            </div>
+                             <p style="font-family: 'Montserrat';
+                                    font-size: 12px; text-align: center;"> Powered By <span style="font-size:20px;color:#f29e24;font-weight:bold">Virtual Pay</span></p>
+                        </div>
+                    </div>
+                </div>
+				
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+    
+
+
+
+    <script type="text/javascript">
+ var $_POST = [];
+ $('#country').val($_POST["COUNTRY"]);
+</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+        <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.1/js/bootstrap.min.js"></script> -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+
+
+
+</body>
+
+<!-- Mirrored from evirtualpay.com/pg/vpcheckout/index.php by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 26 Mar 2022 09:50:16 GMT -->
+</html>

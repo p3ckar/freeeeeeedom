@@ -1,0 +1,110 @@
+.wallet {
+    font-size: 12px;
+    color: gray;
+    background: white;
+    border: 1px solid #000000;
+    align-items: center;
+    padding-left: 5px;
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
+    cursor: none;
+}
+
+.text-color {
+    color: gray;
+}
+
+.card-body>p {
+    background: #fff;
+    /* box-shadow: 2px 2px 2px #f29e24; */
+    padding: 5px 15px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    /* box-shadow: 2px 2px 2px #f29e24; */
+    background: #fff;
+    padding: 5px 15px;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.logo>p {
+    font-weight: 800;
+    color: #000000;
+}
+
+.icons {
+    margin-top: 5px;
+    /* display: flex; */
+    align-items: center;
+    justify-content: space-between;
+    max-width: 520px;
+}
+
+.mobileBtn {
+    color: #fff !important;
+    font-weight: 800 !important;
+}
+
+.card-title>span {
+    font-size: 20px;
+    font-weight: 900;
+}
+
+.form-group>select {
+    background: #fff;
+    color: #000000;
+    cursor: pointer;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+.form-control {
+    font-size: 12px;
+}
+
+.form-group>select:focus {
+    -moz-box-shadow: 0 0 4px #f29e24;
+    -webkit-box-shadow: 0 0 4px #f29e24;
+    box-shadow: 0 0 4px #f29e24;
+    border: 1px solid #f29e24;
+}
+
+.form-group>input {
+    background: #fff;
+    font-size: 12px;
+    color: #000000;
+    cursor: pointer;
+}
+
+.form-group>input:focus {
+    font-size: 12px;
+    -moz-box-shadow: 0 0 4px #f29e24;
+    -webkit-box-shadow: 0 0 4px #f29e24;
+    box-shadow: 0 0 4px #f29e24;
+    border: 1px solid #f29e24;
+}
+
+@media(max-width: 1000px) {
+    /* .form-row {
+        flex-direction: column;
+    } */
+    .icons {
+        /* padding-left: 100px; */
+        display: flex;
+        margin-left: auto;
+        margin-right: auto;
+        flex-direction: row;
+    }
+}

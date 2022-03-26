@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:100,200,300,400,500,600,700,800,900');
+@import url(https://fonts.googleapis.com/css?family=Lato:300,400,400i,700);
+@import url(https://fonts.googleapis.com/css?family=Niconne);
+:root {
+    --blue: #007bff;
+    --indigo: #6610f2;
+    --purple: #6f42c1;
+    --pink: #e83e8c;
+    --red: #dc3545;
+    --orange: #fd7e14;
+    --yellow: #ffc107;
+    --green: #28a745;
+    --teal: #20c997;
+    --cyan: #17a2b8;
+    --white: #FFF;
+    --gray: #6c757d;
+    --gray-dark: #343a40;
+    --primary: #009688;
+    --secondary: #6c757d;
+    --success: #28a745;
+    --info: #17a2b8;
+    --warning: #ffc107;
+    --danger: #dc3545;
+    --light: #f8f9fa;
+    --dark: #343a40;
+    --breakpoint-xs: 0;
+    --breakpoint-sm: 576px;
+    --breakpoint-md: 768px;
+    --breakpoint-lg: 992px;
+    --breakpoint-xl: 1200px;
+    --font-family-sans-serif: "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    --font-family-monospace: SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Montserrat', "Lato", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-weight: 900;
+    font-size: 10px;
+}
+
+.headings {}
+
+input {
+    text-decoration-color: black;
+    font-size: 12px;
+}
+
+.container {
+    background: #fff;
+}
+
+#main-navigation {
+    justify-content: center;
+    margin: 1% auto;
+}
+
+#mobile-pay {
+    justify-content: center;
+    margin: 1% auto;
+}
+
+#card-pay {
+    justify-content: center;
+    margin: 0% auto;
+}
+
+hr {
+    padding: 0;
+    margin: 0;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.logo>p {
+    font-weight: 800;
+    color: #000000;
+    margin-left: 0;
+}
+
+.card-group {
+    margin-top: 5%;
+    margin-bottom: 1%;
+    margin-left: auto;
+    margin-right: auto;
+    /* width: 70%;
+    height: 70%; */
+}
+
+.card-body ul>hr {
+    padding: 0;
+    margin: 0;
+}
+
+.card {
+    /* margin-left: 1px;
+    margin-right: 1px; */
+    /* height: 94%; */
+    -moz-box-shadow: 0 0 10px lightgray !important;
+    -webkit-box-shadow: 0 0 10px lightgray !important;
+    box-shadow: 0 0 10px lightgray !important;
+}
+
+ul {
+    list-style: none;
+    padding: 5px;
+}
+
+li {
+    padding: 5px;
+}
+
+i {
+    padding-right: 5px;
+}
+
+.icon_color {
+    color: black;
+}
+
+.icon_style_right {
+    padding-left: 70px;
+    padding-right: 0px;
+}
+
+.contained {
+    background: #fff;
+    opacity: 0.7;
+    padding: 5px 10px !important;
+    border-radius: 2px;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    -ms-border-radius: 2px;
+    -o-border-radius: 2px;
+}
+
+.disabled-icons {}
+
+.angle_icon_style_right {
+    padding-left: 90px;
+    padding-right: 0px;
+}
+
+.angle_icon_style_wallet {
+    padding-left: 125px;
+    padding-right: 0px;
+}
+
+.icon_style_left {
+    padding-left: 10px;
+    padding-right: 0px;
+    margin-right: 15px;
+}
+
+.icon-background {
+    color: #fff;
+}
+
+.inner-icon-bg {
+    color: #f29e24;
+}
+
+.payButton {
+    width: 100%;
+    color: azure;
+    font-size: 8px;
+    background: rgba( 251, 172, 1, 0.55);
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, rgba(2, 0, 36, 1) 0%, rgba(251, 172, 1, 0.55) 87%, rgba(251, 172, 1, 0.55) 100%);
+    justify-content: center;
+}
+
+.imgLogo {
+    height: 25px;
+    margin-left: 0px;
+    padding-left: 0px;
+    object-fit: contain;
+}
+
+.icons {
+    margin-top: 20px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+label {
+    font-size: 13px;
+}
+
+.cardsimg {
+    object-fit: contain;
+    margin-top: 5px;
+    margin-left: 0;
+    margin-right: 0;
+    padding-right: 0;
+    padding-left: 0;
+    /* width: 70px;
+    height: 30px; */
+}
+
+.card-row-img {
+    object-fit: contain;
+    margin-top: 10px!important;
+    margin-left: 24px;
+    width: 250px;
+}
+
+.mobile-row-img {
+    object-fit: contain;
+    margin-top: 10px!important;
+    width: 250px;
+}
+
+.tigo-img {
+    margin-top: 5px;
+    width: 50px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.pci-img {
+    width: 150px;
+    height: 80px;
+    float: left;
+    object-fit: contain;
+    padding-right: 0;
+    margin-bottom: 5%;
+    padding-bottom: 5%;
+}
+
+.union-img {
+    width: 60px;
+    object-fit: contain;
+    height: 50px;
+}
+
+.customcontainer {
+    margin-left: 7%;
+    margin-right: 7%;
+}
+
+.customrow {
+    width: 90%;
+}
+
+.log-row {
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-bottom: 20%;
+    padding-bottom: 5%;
+}
+
+.card-input {
+    display: flex;
+    background: #fff;
+    opacity: 0.5;
+    align-items: center !important;
+    padding: 5px;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+    height: 50px;
+}
+
+.card-input>i {
+    font-size: 20px;
+}
+
+.card-input>input {
+    background: #d9d9d9;
+    opacity: 0.95;
+    height: 20px;
+    color: #000000;
+}
+
+.card-input>input:focus {
+    background: #d9d9d9;
+    box-shadow: 2px 2px 2px #f29e24;
+    opacity: 0.95;
+    border: none !important;
+    outline: none;
+    font-weight: 4 00;
+    text-decoration-color: black;
+    outline-color: #d9d9d9;
+}
+
+.card-container {
+    display: none!important;
+}
+
+.input-icons i {
+    position: absolute;
+}
+
+.input-icons {
+    background: #fff;
+    color: #000000;
+    width: 100%;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.input-icons>input:focus {
+    -moz-box-shadow: 0 0 4px #f29e24;
+    -webkit-box-shadow: 0 0 4px #f29e24;
+    box-shadow: 0 0 4px #f29e24;
+    font-size: 12px;
+    border: 1px solid #f29e24;
+}
+
+.input-icons>input {
+    color: #000000;
+}
+
+.angle-left-icon {
+    padding-right: 8px;
+    margin-right: 8px;
+}
+
+.icon {
+    padding: 10px;
+    min-width: 50px;
+    text-align: center;
+}
+
+.card_t {
+    font-family: 'Montserrat';
+    font-size: 12px;
+}
+
+.input-field {
+    width: 100%;
+    font-size: 12px;
+    padding: 10px;
+    background: #fff;
+    color: #000000;
+    text-align: center;
+}
+
+.btn-warning {
+    background-color: #f29e24 !important;
+}
+
+.insights {
+    text-align: center;
+    font-family: 'Montserrat';
+    font-size: 8px;
+    background: white !important;
+}
+
+.card_footer {
+    margin-left: auto;
+    margin-top: 0%;
+    margin-bottom: 2%;
+    margin-right: auto;
+    display: flex;
+}
+
+.pci_footer {
+    margin-right: 0px;
+    margin-left: 32px
+}
+
+.powered_footer {
+    font-size: 12px;
+    margin-left: 16px;
+}
+
+@media (max-width: 1000px) {
+    .card-group {
+        width: 100%;
+        height: 100%;
+        margin: 40% auto;
+        /* margin-left: auto;
+        margin-right: auto;
+        margin-top: auto;
+        margin-bottom: auto; */
+    }
+    .angle_icon_style_right {
+        /* padding-left: 90px;
+        padding-right: 0px; */
+        float: right;
+    }
+    .angle_icon_style_wallet {
+        padding-left: 125px;
+        padding-right: 0px;
+    }
+    .pci_footer {
+        margin-right: 0px;
+        margin-left: 64px
+    }
+    .powered_footer {
+        font-size: 12px;
+        margin-left: 16px;
+    }
+    .icon_style_right {
+        padding-left: 70px;
+        padding-right: 0px;
+        float: right;
+    }
+    .card-row-img {
+        object-fit: contain;
+        margin-top: 10px!important;
+        margin-left: auto;
+        margin-right: auto;
+        height: 50px;
+        width: 100%;
+    }
+    .card {
+        /* margin-left: 5px;
+        margin-right: 5px; */
+        width: 100%;
+        height: 100%;
+    }
+    .card_footer {
+        margin-left: auto;
+        margin-top: 0%;
+        margin-bottom: 2%;
+        margin-right: auto;
+        display: flex;
+    }
+    .col {
+        flex-direction: row;
+        padding: 0px;
+        margin: 0px;
+    }
+    .col-sm-12 {
+        flex-direction: row;
+        padding: 0px;
+        margin: 0px;
+        width: 50% !important;
+    }
+    .payButton {
+        width: 100%;
+        padding-right: 20px;
+        padding-left: 20px;
+        margin-left: 0px;
+        justify-content: center;
+    }
+    .col-2 {
+        margin-left: 100px;
+    }
+    .col-10 {}
+}
